@@ -46,14 +46,14 @@ in {
   programs.gamemode.enable = true;
   programs.gamemode.settings.general.inhibit_screensaver = 0;
 
-  programs.gamescope = {
-    enable = true;
-    capSysNice = true;
-    args = [
-      "--rt"
-      "--expose-wayland"
-    ];
-  };
+  # programs.gamescope = {
+  #   enable = true;
+  #   capSysNice = true;
+  #   args = [
+  #     "--rt"
+  #     "--expose-wayland"
+  #   ];
+  # };
 
   environment.systemPackages = with pkgs; [
     # steam-with-pkgs
@@ -63,5 +63,6 @@ in {
     wineWowPackages.stagingFull
     # protonup-qt
     mangohud
+    gamescope
   ];
 }
