@@ -21,30 +21,30 @@ in {
     # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     # localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    package = pkgs.steam.override {
+    #package = pkgs.steam.override {
       # withPrimus = true;
-      extraPkgs = pkgs: 
-        with pkgs; [ 
+      #extraPkgs = pkgs: 
+        #with pkgs; [ 
           # bumblebee
           # glxinfo
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-        ];
-    };
+          #xorg.libXcursor
+          #xorg.libXi
+          #xorg.libXinerama
+          #xorg.libXScrnSaver
+          #libpng
+          #libpulseaudio
+          #libvorbis
+          #stdenv.cc.cc.lib
+          #libkrb5
+          #keyutils
+        #];
+    #};
     # gamescopeSession.enable = true;
-    extraCompatPackages = [pkgs.proton-ge-bin];
+    #extraCompatPackages = [pkgs.proton-ge-bin];
   };
 
-  programs.gamemode.enable = true;
-  programs.gamemode.settings.general.inhibit_screensaver = 0;
+  #programs.gamemode.enable = true;
+  #programs.gamemode.settings.general.inhibit_screensaver = 0;
 
   # programs.gamescope = {
   #   enable = true;
@@ -59,7 +59,7 @@ in {
     # steam-with-pkgs
     # protontricks
     lutris
-    winetricks
+    #winetricks
     wineWowPackages.stagingFull
     # protonup-qt
     mangohud

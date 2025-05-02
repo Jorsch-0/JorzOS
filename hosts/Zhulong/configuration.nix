@@ -12,9 +12,9 @@
       ../../modules/nixos/pipewire.nix
       ../../modules/nixos/security.nix
       ../../modules/nixos/amd-drivers.nix
-      ../../modules/nixos/davinci-resolve-studio.nix
-      ../../modules/nixos/thunar.nix
       ../../modules/nixos/gaming.nix
+      ../../modules/nixos/hosts/Zhulong.nix
+      ../../modules/nixos/dolphin.nix
     ];
 
   # Bootloader.
@@ -77,7 +77,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    davinci-resolve-studio
   ];
 
   programs = {

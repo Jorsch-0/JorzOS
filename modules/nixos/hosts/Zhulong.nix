@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
+  imports = [
+    ../davinci-resolve-studio.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
     rofi-wayland
     waybar
     swaynotificationcenter
@@ -24,5 +28,7 @@
     pamixer
     playerctl
     insync
+
+    kdePackages.ark
   ];
 }

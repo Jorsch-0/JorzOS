@@ -26,8 +26,8 @@ in
 
     hardware.graphics = {
       extraPackages = with pkgs; [
-        libva
-			  libva-utils
+        #libva
+	      #libva-utils
         # amdvlk
         # rocmPackages_5.rocm-runtime
         # rocmPackages_5.rocminfo
