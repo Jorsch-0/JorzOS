@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -11,7 +11,7 @@
 
   # nixpkgs.config.allowUnfree = true;
 
-  # wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland.systemd.enable = false;
 
   home.stateVersion = "24.11"; # match your system version
 }

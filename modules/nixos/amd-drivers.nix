@@ -22,18 +22,18 @@ in
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
-    };
-
-    hardware.graphics = {
       extraPackages = with pkgs; [
-        #libva
-	      #libva-utils
         # amdvlk
-        # rocmPackages_5.rocm-runtime
-        # rocmPackages_5.rocminfo
         rocmPackages.clr.icd
-        clinfo
+        libva
+        ocl-icd
       ];
     };
+
+    environment.systemPackages = with pkgs; [
+      vulkan-tools
+      clinfo
+      # mesa-demos
+    ];
   };
 }

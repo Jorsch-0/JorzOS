@@ -28,7 +28,7 @@
     pamixer
     playerctl
     insync
-
+    nh
     kdePackages.ark
   ];
 }

@@ -34,12 +34,12 @@ let
           libxcrypt # provides libcrypt.so.1
           libxkbcommon
           nspr
-          ocl-icd
+          # ocl-icd
           opencl-headers
-          python3
-          python3.pkgs.numpy
+          # python3
+          # python3.pkgs.numpy
           udev
-          xdg-utils # xdg-open needed to open URLs
+          # xdg-utils # xdg-open needed to open URLs
           xorg.libICE
           xorg.libSM
           xorg.libX11
@@ -89,5 +89,5 @@ let
     };
 in
 {
-  environment.systemPackages = [ davinci-resolve-studio ];
+  environment.systemPackages = with pkgs; [ davinci-resolve-studio ];
 }
