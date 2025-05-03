@@ -20,9 +20,16 @@
       gtk-application-prefer-dark-theme = 1;
     };
 
+    # theme = {
+    #   package = pkgs.flat-remix-gtk;
+    #   name = "Flat-Remix-GTK-Grey-Dark";
+    # };
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Dark";
+      package = (pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        accents = ["blue"];
+      });
+      name = "catppuccin-mocha-blue-standard";
     };
 
     iconTheme = {

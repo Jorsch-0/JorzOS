@@ -1,5 +1,11 @@
 { config, lib, pkgs, inputs, ... }:
-
+let
+  variant = "mocha";
+  accent = "blue";
+  kvantumThemePackage = pkgs.catppuccin-kvantum.override {
+    inherit variant accent;
+  };
+in
 {
   home.packages = with pkgs; [
     kdePackages.qtstyleplugin-kvantum
@@ -31,8 +37,24 @@
   '';
 
   xdg.configFile = {
-    "Kvantum".source = ../../assets/Kvantum;
-    "Kvantum".recursive = true;
+    "Kvantum/kvantum.kvconfig".text = ''
+      [General]
+      theme=catppuccin-${variant}-${accent}
+    '';
+
+    # The important bit is here, links the theme directory from the package to a directory under `~/.config`
+    # where Kvantum should find it.
+    "Kvantum/catppuccin-${variant}-${accent}".source = "${kvantumThemePackage}/share/Kvantum/catppuccin-${variant}-${accent}";
+  };
+
+  # xdg.configFile = {
+  #   "Kvantum/ArcDark".source = "${pkgs.arc-kde-theme}/share/Kvantum/ArcDark";
+  #   "Kvantum/kvantum.kvconfig".text = "[General]\ntheme=ArcDark";
+  # };
+
+  xdg.configFile = {
+    # "Kvantum".source = ../../assets/Kvantum;
+    # "Kvantum".recursive = true;
     "qt5ct".source = ../../assets/qt5ct;
     "qt5ct".recursive = true;
     "qt6ct".source = ../../assets/qt6ct;

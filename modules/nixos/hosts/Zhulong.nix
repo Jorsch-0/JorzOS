@@ -20,7 +20,6 @@
     imv
     (mpv.override {scripts = [mpvScripts.mpris];}) # with tray
     gnome-font-viewer
-    file-roller
     xdg-user-dirs
     fastfetch
     google-chrome
@@ -30,5 +29,6 @@
     insync
     nh
     kdePackages.ark
+    nwg-look
   ];
 }
